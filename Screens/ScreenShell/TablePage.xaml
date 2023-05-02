@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bola_Cheia.Screens.ScreenShell.TablePage">
+   
+    <AbsoluteLayout BackgroundColor="#7FFF00">
+       
+        <!-- Image -->
+        <Image Source="futebol.png" x:Name="imgDestaque"
+               AbsoluteLayout.LayoutFlags="PositionProportional" 
+               
+               AbsoluteLayout.LayoutBounds="0.5, 0, 100, 180"/>
+        <Label Text=""/>
+        <!-- Frame for table -->
+        <Button x:Name="LP" Text="Ligas Principais" FontSize="17" FontAttributes="Bold"
+                AbsoluteLayout.LayoutBounds="50, 280, 260, 50" IsVisible="true"
+                Clicked="Button_Clicked" />
+            
+        <Button x:Name="CA" Text="Campeonatos Nacionais"  FontSize="17" FontAttributes="Bold"
+                AbsoluteLayout.LayoutBounds="50, 380, 260, 50" IsVisible="true"
+                Clicked="Button_Clicked_1"/>
+
+        <Button x:Name="CI" Text="Campeonatos Internacionais"  FontSize="17" FontAttributes="Bold
+                " AbsoluteLayout.LayoutBounds="50, 480, 260, 50" IsVisible="true"
+                Clicked="Button_Clicked_2"/>
+
+        <Frame AbsoluteLayout.LayoutFlags="All" IsVisible="false"
+               AbsoluteLayout.LayoutBounds="0.5,0.9,0.95,0.7"
+               BorderColor="Black" CornerRadius="0"
+               HasShadow="True" BackgroundColor="#4CAF50" x:Name="Tabela">
+            <StackLayout Margin="-19,-20,-19,0">
+                <HorizontalStackLayout Margin="-10,0,0,0">
+                    <Frame BorderColor="Black" Padding="0" Margin="0,0,0,0"  HeightRequest="70" WidthRequest="400"
+                           BackgroundColor="#00C853" x:Name="toolbar">
+                        
+                        <HorizontalStackLayout>
+                            <VerticalStackLayout Spacing="0">
+                                <HorizontalStackLayout Spacing="250">
+                                    <Label Text="Liga" Margin="25,0,0,0"/>
+                                    <Button HeightRequest="40" WidthRequest="40" Text="✖" Padding="0"
+                                        TextColor="White" BackgroundColor="Transparent" 
+                                        AbsoluteLayout.LayoutBounds="200, 200, 260, 50" FontSize="25" Clicked="Button_Clicked_3"/>
+                                </HorizontalStackLayout>
+
+                                <Picker Title=">>Selecione uma liga" BackgroundColor="Transparent" TitleColor="White" TextColor="#E8E8E8"
+                                        Margin="-150,-10,0,0" SelectedIndexChanged="Picker_SelectedIndexChanged" WidthRequest="160">
+                                    <Picker.Items>
+                                        <x:String>Premier League</x:String>
+                                        <x:String>La Liga</x:String>
+                                        <x:String>Serie A</x:String>
+                                        <x:String>Bundesliga</x:String>
+                                        <x:String>Ligue 1</x:String>
+                                        <x:String>Campeonato Brasileiro Série A</x:String>
+                                        <x:String>Liga Portugal</x:String>
+                                        <!-- Adicione mais temporadas aqui -->
+                                    </Picker.Items>
+                                </Picker>
+                            </VerticalStackLayout>
+
+                            
+                            
+                        </HorizontalStackLayout>
+                    </Frame>
+                    <Label />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Frame BorderColor="Transparent" Padding="1" Margin="10,0,0,0" BackgroundColor="Transparent">
+                        <Label Text="           Clube                            Pts     PJ      VIT      E     DER    GM   GC    GS"
+                                HorizontalOptions="FillAndExpand" TextColor="White"
+                                VerticalOptions="FillAndExpand" FontSize="10" />
+
+                    </Frame>
+                </HorizontalStackLayout>
+                <ListView x:Name="listView" RowHeight="40">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell  Height="50">
+                                <StackLayout Orientation="Horizontal" HeightRequest="10" Spacing="20" Padding="0">
+                                    
+                                    <Label Text="{Binding posicao}" FontSize="9" WidthRequest="10" TextColor="White"/>
+                                    <Label Text="{Binding infoNome.Name}" FontSize="9" Margin="-15,0,0,0"  WidthRequest="75" TextColor="White" LineBreakMode="TailTruncation"/>
+                                    <Image Source="{Binding urlImage}" HeightRequest="12" WidthRequest="18"/>
+                                    <Label Text="{Binding pontos}" FontSize="9" WidthRequest="10" Margin="-7,0,0,0" TextColor="White"/>
+                                    <Label Text="{Binding pardidasJogadas}" FontSize="9" WidthRequest="10" TextColor="White" Margin="-5,0,0,0"/>
+                                    <Label Text="{Binding vitorias}" FontSize="9" WidthRequest="10" TextColor="White" Margin="-2,0,0,0"/>
+                                    <Label Text="{Binding empates}" FontSize="9" WidthRequest="10" TextColor="White" Margin="-2,0,0,0"/>
+                                    <Label Text="{Binding derrotas}" FontSize="9" WidthRequest="10" TextColor="White" Margin="-5,0,0,0"/>
+                                    <Label Text="{Binding golsPro}" FontSize="9" WidthRequest="10" TextColor="White" Margin="-4,0,0,0"/>
+                                    <Label Text="{Binding golscontra}" FontSize="9" WidthRequest="10" TextColor="White" Margin="-5,0,0,0"/>
+                                    <Label Text="{Binding saldoGols}" FontSize="9" WidthRequest="15" TextColor="White" Margin="-7,0,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+
+    </AbsoluteLayout>
+</ContentPage>

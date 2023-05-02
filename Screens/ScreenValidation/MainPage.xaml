@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bola_Cheia.MainPage" BackgroundColor="#7FFF00">
+
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <AbsoluteLayout HorizontalOptions="Center">
+            <Frame AbsoluteLayout.LayoutBounds="50, 100, 118, 118" CornerRadius="100" BackgroundColor="Transparent" BorderColor="Transparent">
+                <Image Source="objetivo.gif" x:Name="imgPD"
+                       IsAnimationPlaying="True" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="150" WidthRequest="150"/>
+            </Frame>
+            
+
+            <Button x:Name="btnExecutarAcao" AbsoluteLayout.LayoutBounds="0, 600, 200, 50" CornerRadius="20" Text="Entrar"
+                    TextColor="#000000" FontAttributes="Bold" Clicked="Button_Clicked"/>
+
+            <StackLayout x:Name="LoadingLayout" IsVisible="False" Grid.Row="0"  AbsoluteLayout.LayoutBounds="0, 400, 200, 50" >
+                <ActivityIndicator IsRunning="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </StackLayout>
+</ContentPage>

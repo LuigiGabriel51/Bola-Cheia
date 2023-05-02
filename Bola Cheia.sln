@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bola Cheia", "Bola Cheia.csproj", "{950ECD4C-1F78-478D-AFFE-52D703A1AE27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF4E8AA7-8F4D-4782-91BF-8897FBCA822E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{950ECD4C-1F78-478D-AFFE-52D703A1AE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950ECD4C-1F78-478D-AFFE-52D703A1AE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950ECD4C-1F78-478D-AFFE-52D703A1AE27}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{950ECD4C-1F78-478D-AFFE-52D703A1AE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950ECD4C-1F78-478D-AFFE-52D703A1AE27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950ECD4C-1F78-478D-AFFE-52D703A1AE27}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

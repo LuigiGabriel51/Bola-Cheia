@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bola_Cheia.Screens.ScreenShell.MachesPages"
+             Title="MachesPages">
+    <AbsoluteLayout BackgroundColor="#7FFF00">
+
+        <Image Source="futebol.png" 
+               AbsoluteLayout.LayoutFlags="PositionProportional" 
+               
+               AbsoluteLayout.LayoutBounds="0.5, 0, 90, 150"/>
+
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="10, 125, 150, 180">
+            <Label Text="Jogos de Hoje" FontSize="Large" FontFamily="Roboto" FontAttributes="Bold"
+                   x:Name="Jdata" HeightRequest="30" WidthRequest="270" LineBreakMode="WordWrap"
+                   BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="Fill" Margin="200,0,0,0"/>
+
+        </VerticalStackLayout>
+        <Button x:Name="button1" Text="&#9664;" WidthRequest="80" VerticalOptions="Start" HeightRequest="20"
+                    TextColor="Black" Padding="0" Margin="0,0,0,0" Clicked="Button_Clicked" 
+                    AbsoluteLayout.LayoutBounds="10, 155, 150, 180"/>
+
+        <Button x:Name="button2" Text="&#9654;" WidthRequest="80" HeightRequest="20" 
+                    VerticalOptions="Start" TextColor="Black" Padding="0" Margin="0,0,0,0" 
+                    Clicked="Button_Clicked3" AbsoluteLayout.LayoutBounds=" 200, 155, 150, 180" />
+        
+        <Frame AbsoluteLayout.LayoutFlags="All" IsVisible="true" Padding="10"
+               AbsoluteLayout.LayoutBounds="0.5,0.9,0.75,0.7"
+               BorderColor="Black" CornerRadius="0"
+               HasShadow="True" BackgroundColor="#4CAF50" x:Name="confrontosTable">
+            
+            <ListView x:Name="listMaches" RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <StackLayout Orientation="Vertical" Margin="0,0,0,0" Padding="0">
+                                <VerticalStackLayout >
+                                    <Label Text="{Binding Competicao}" TextColor="White" HorizontalOptions="Center" FontSize="12"/>
+                                    <HorizontalStackLayout Spacing="70">
+                                        <Label Text="{Binding nameCasa}" FontSize="10" TextColor="White" WidthRequest="90" LineBreakMode="TailTruncation" MaxLines="1"/>
+                                        <Label Text="{Binding nameVisitante}" FontSize="10"   TextColor="White" LineBreakMode="TailTruncation" MaxLines="1" WidthRequest="90"/>
+                                    </HorizontalStackLayout>
+
+                                    <Label Text="{Binding resultado}" FontSize="15" TextColor="White" HorizontalOptions="Center" Margin="0,0,0,0"/>
+                                    <HorizontalStackLayout >
+                                        <Label TextColor="White" FontSize="9"   HorizontalOptions="Start" WidthRequest="200">
+                                            <MultiBinding StringFormat="Vencedor: {0}">
+                                                <Binding Path="Winner"/>
+
+                                            </MultiBinding>
+                                        </Label>
+                                        <Label TextColor="White" FontSize="9"   HorizontalOptions="End">
+                                            <MultiBinding StringFormat="Rodada: {0}" >
+                                                <Binding Path="Rodada"/>
+
+                                            </MultiBinding>
+                                        </Label>
+                                    </HorizontalStackLayout>
+                                    <Label TextColor="White" FontSize="9" HorizontalTextAlignment="Start">
+                                        <MultiBinding StringFormat="Data e Horário: {0}" >
+                                            <Binding Path="Horario"/>
+
+                                        </MultiBinding>
+                                    </Label>
+                                </VerticalStackLayout>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>
