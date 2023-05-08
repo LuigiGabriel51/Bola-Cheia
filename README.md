@@ -1,5 +1,6 @@
 # Bola-Cheia
-APP criado em C#, usando o framework .NET Maui da Microsoft; Este Aplicativo tem o intuito de informar usuários sobre Futebol, contendo informações para que gosta de futebol,
+APP criado em C#, usando o framework .NET Maui da Microsoft; Este Aplicativo tem o intuito de informar usuários sobre Futebol, contendo informações para quem gosta de futebol, o APP atualmente contém diversas informações de futebol;
+
 como: tabela das 7 principais ligas, Premier League (inglaterra), La Liga (Espanha), Série A (Itália), Bundesliga (Alemanha), Ligue One (França),
 Campeonato Brasileiro Série A (Brasil) e Liga Portuguesa (Portugal);
 Também conta com a funcionalidade de Confrontos em Tempo Real, confronto esses, das ligas citadas acima; resultados, horários, placar, etc. são algumas informações 
